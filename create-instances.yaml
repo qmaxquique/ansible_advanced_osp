@@ -10,7 +10,8 @@
       - { name: "database", security_groups: ["db"]}
       - { name: "frontend", security_groups: ["frontend"]}
   tasks:
-  - include_role: osp-servers
-    loop: vms_data
-    loop_control:
-      loop_var: vm
+    - include_role: 
+      name: osp-servers
+      loop: vms_data
+      loop_control:
+        loop_var: vm
