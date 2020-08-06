@@ -6,7 +6,7 @@
     cloud: openstack
     name: "{{ vm['name'] }}"
     image: "{{ vm['image'] | default ('rhel-guest') }}"
-    key_name: "{{ vm['key_name']| default('ansible_key') }}"
+    key_name: "{{ vm['key_name']| default('ansible_ssh') }}"
     flavor: "{{ vm['flavor']| default('m1.medium') }}"
     security_groups: "{{ vm['security_groups']| default(omit) }}"
     delete_fip: yes
@@ -17,7 +17,7 @@
     userdata: |
       #!/bin/bash
       curl -o /tmp/openstack.pub http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
-      cat /tmp/openstack.pub >> /home/cloud-user/.ssh/authorized_keys
+      cat /tmp/openstack.pub >> /home/econci-ar.ibm.com/.ssh/authorized_keys
 
 - name: Add floating IP to instance
   os_floating_ip:
