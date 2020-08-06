@@ -9,10 +9,7 @@
       - { name: "app2", security_groups: ["apps"]}
       - { name: "database", security_groups: ["db"]}
       - { name: "frontend", security_groups: ["frontend"]}
-  tasks:
-  - name: Create VMS according specifications
-    include_role:
-      name: osp-servers
-    with_items: vms_data
-    loop_control:
-      loop_var: vm
+  roles:
+    role: osp-servers
+    vm: "{{ item }}"
+  with_items: vms_data
