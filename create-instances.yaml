@@ -8,7 +8,7 @@
       - { name: "app1", security_groups: ["apps"], meta: "group=apps,deployment_name=Dev"}
       - { name: "app2", security_groups: ["apps"], meta: "group=apps,deployment_name=Dev"}
       - { name: "database", security_groups: ["db"], meta: "group=appdbs,deployment_name=Dev"}
-      - { name: "frontend", security_groups: ["frontend"], meta: "group=apps,deployment_name=Dev"}
+      - { name: "frontend", security_groups: ["frontend"], meta: "group=frontends,deployment_name=Dev"}
   tasks:
     - name: Including role
       include_role:
