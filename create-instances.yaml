@@ -13,4 +13,4 @@
     - role: osp-servers
       vars:
         vm: "{{ item }}"
-      loop: vms_data
+      loop: "{{ vms_data }}"
