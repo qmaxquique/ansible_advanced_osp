@@ -10,6 +10,7 @@
       - { name: "database", security_groups: ["db"]}
       - { name: "frontend", security_groups: ["frontend"]}
   roles:
-    role: osp-servers
-    vm: "{{ item }}"
+    - role: osp-servers
+      vars:
+        - vm: "{{ item }}"
     with_items: vms_data
