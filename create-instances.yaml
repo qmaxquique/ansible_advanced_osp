@@ -10,7 +10,7 @@
       - { name: "database", security_groups: ["db"]}
       - { name: "frontend", security_groups: ["frontend"]}
   tasks:
-    - name: Incluing role
+    - name: Including role
       include_role:
         name: osp-servers
       loop: "{{ vms_data }}"
