@@ -30,4 +30,3 @@
     timeout: 200
   retries: 3
   delay: 10
-  until: result is not failed
