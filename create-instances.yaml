@@ -13,4 +13,4 @@
     - role: osp-servers
       vars:
         vm: "{{ item }}"
-  with_items: vms_data
+      with_items: vms_data
