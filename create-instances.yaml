@@ -14,6 +14,6 @@
     include_role:
       name: osp-servers
     loop: vms_data
-    wantlist: true
     loop_control:
+      wantlist: true
       loop_var: vm
