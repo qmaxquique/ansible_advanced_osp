@@ -10,9 +10,9 @@
       - { name: "database", security_groups: ["db"]}
       - { name: "frontend", security_groups: ["frontend"]}
   tasks:
-    - name: Create VMS according specifications
-      include_role:
-        name: osp-servers
-        loop: vms_data
-        loop_control:
-          loop_var: vm
+  - name: Create VMS according specifications
+    include_role:
+      name: osp-servers
+      loop: vms_data
+      loop_control:
+        loop_var: vm
